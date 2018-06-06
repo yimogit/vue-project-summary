@@ -1,5 +1,5 @@
 > 一个使用 vuepress 总结 vue 相关经验的库
-
+[![Build Status](https://travis-ci.org/yimogit/vue-project-summary.svg?branch=master)](https://travis-ci.org/yimogit/vue-project-summary)
 ## 相关库
 
 * vue
