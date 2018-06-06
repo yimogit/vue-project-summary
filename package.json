@@ -1,0 +1,23 @@
+{
+  "name": "vue-project-summary",
+  "version": "0.1.0",
+  "description": "一个使用 vuepress 总结 vue 相关经验的库",
+  "author": "yimo",
+  "scripts": {
+    "dev": "vuepress dev docs --port 3030",
+    "start":
+      "nodemon --watch ./docs/.vuepress --exec npm run dev",
+    "build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yimogit/vue-project-summary"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5",
+    "vuepress": "^0.10.0"
+  },
+  "engines": {
+    "node": ">=8"
+  }
+}
