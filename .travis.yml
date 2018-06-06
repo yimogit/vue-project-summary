@@ -20,6 +20,7 @@ script:
 
 after_script:
   - cd ./dist
+  - echo 'vue-doc.yimo.link' > CNAME
   - git init
   - git config user.name "${U_NAME}"
   - git config user.email "${U_EMAIL}"
