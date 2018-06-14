@@ -4,9 +4,8 @@
   "description": "一个使用 vuepress 总结 vue 相关经验的库",
   "author": "yimo",
   "scripts": {
-    "dev": "vuepress dev docs --port 3030",
-    "start":
-      "nodemon --watch ./docs/.vuepress --exec npm run dev",
+    "dev": "vuepress dev docs --port 3033",
+    "start": "nodemon --watch ./docs/.vuepress --exec npm run dev",
     "build": "vuepress build docs"
   },
   "repository": {
@@ -19,5 +18,8 @@
   },
   "engines": {
     "node": ">=8"
+  },
+  "dependencies": {
+    "mescroll.js": "^1.3.2"
   }
 }
