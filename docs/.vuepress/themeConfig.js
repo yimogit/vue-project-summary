@@ -1,21 +1,21 @@
 const utils = require('./helper/utils')
 module.exports = {
-  repo: 'yimogit/',
+  repo: 'yimogit/vue-project-summary',
   repoLabel: 'Github',
-  editLinks: false,
+  editLinks: true,
+  docsDir: 'docs',
   activeHeaderLinks: true,
   sidebarDepth: 1,
   search: true,
   locales: {
     '/': {
       label: '简体中文',
-      selectText: '选择语言',
-      editLinkText: '帮助我们改善此页面！',
+      editLinkText: '在 GitHub 上编辑此页',
       lastUpdated: '上次更新',
       nav: [
         {
           text: '一点经验',
-          link: '/zh/guide/'
+          link: '/guide/'
         },
         {
           text: '玩具链接',
@@ -35,12 +35,7 @@ module.exports = {
         }
       ],
       sidebar: {
-        '/zh/guide/': utils.genSidebarConfig(
-          '一点经验',
-          './docs/zh/guide',
-          true
-        ),
-        // '/zh/test/': utils.genSidebarConfig('测试', './docs/zh/test', true) 
+        '/guide/': utils.genSidebarConfig('一点经验', './docs/guide', true)
       }
     }
   }
