@@ -2,7 +2,7 @@
 
 经常会使用到组件封装
 
-## vue + mescroll.js = [VScrollFull.vue](./vue+mescroll=VScrollFull组件.md)
+## vue + mescroll = [VScrollFull.vue](./vue+mescroll=VScrollFull.md)
 
 简单在 vue 中封装了 mescroll.js 使其能够更容易在项目中使用，包含下拉刷新，上拉加载功能
 

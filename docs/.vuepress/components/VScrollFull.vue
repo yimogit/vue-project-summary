@@ -16,7 +16,9 @@ export default {
     pageSize: {
       type: Number,
       default: 10
-    }
+    },
+    downOptions: Object,
+    upOptions: Object
   },
   data() {
     return {
@@ -33,35 +35,44 @@ export default {
   mounted() {
     this.$nextTick(this.$_init())
   },
+  beforeDestroy() {
+    // if (this.instance) this.instance.destroy()
+  },
   methods: {
     $_init() {
       this.showEmptySlot = false
       if (this.instance) this.instance.destroy()
       this.instance = new MeScroll(this.refName, {
-        down: {
-          use: true,
-          auto: false //默认不执行下拉刷新的回调
-        },
-        up: {
-          callback: this.$_upCallback,
-          use: true,
-          isBounce: false,
-          offset: 100,
-          noMoreSize: 10,
-          loadFull: {
-            //不满一屏自动加载
-            use: false,
-            delay: 500
+        down: Object.assign(
+          {
+            use: true,
+            auto: false //默认不执行下拉刷新的回调
           },
-          page: {
-            num: 0,
-            size: this.pageSize,
-            time: null
+          this.downOptions
+        ),
+        up: Object.assign(
+          {
+            callback: this.$_upCallback,
+            use: true,
+            isBounce: false,
+            offset: 100,
+            noMoreSize: 10,
+            loadFull: {
+              //不满一屏自动加载
+              use: false,
+              delay: 500
+            },
+            page: {
+              num: 0,
+              size: this.pageSize,
+              time: null
+            },
+            scrollbar: {
+              use: false
+            }
           },
-          scrollbar: {
-            use: false
-          }
-        }
+          this.upOptions
+        )
       })
       let _this = this
       this.instance.showEmpty = function() {
