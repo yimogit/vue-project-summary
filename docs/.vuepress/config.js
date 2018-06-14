@@ -7,7 +7,7 @@ module.exports = {
   description: '使用 vue 相关技术栈的经验总结',
   base: '/',
   dest: './dist',
-  serviceWorker: false, //PWA
+  serviceWorker: true, //PWA
   themeConfig,
   locales: {
     '/': {
