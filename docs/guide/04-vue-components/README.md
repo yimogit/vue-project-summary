@@ -2,7 +2,18 @@
 
 经常会使用到组件封装
 
-## vue + mescroll = [VScrollFull.vue](./vue+mescroll=VScrollFull.md)
+## element-ui 上传组件的二次封装
+
+- [v-upload-single](./element-ui-upload.md#单选上传)
+- [v-upload-multiple](./element-ui-upload.md#多选上传)
+
+## element-ui 表格组件的二次封装
+
+- [v-table-pager](./element-ui-table.md)
+
+## vue+mescroll 打造移动端滚动条组件
+
+说时移动端，PC 端也挺好用：[vue-mescroll](./vue-mescroll.md)
 
 简单在 vue 中封装了 mescroll.js 使其能够更容易在项目中使用，包含下拉刷新，上拉加载功能
 
