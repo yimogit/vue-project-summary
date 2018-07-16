@@ -1,6 +1,6 @@
 <template>
 
-  <el-input :type="type" v-model="currentValue" @change="change" @blur="blur" :maxlength="maxlength" :disabled="disabled" :class="small?'inline-small-input':''" :placeholder="placeholder">
+  <el-input :type="type" v-model="currentValue" :maxlength="maxlength" :disabled="disabled" :class="small?'inline-small-input':''" :placeholder="placeholder">
     <slot name="prefix" slot="prefix"></slot>
     <slot name="suffix" slot="suffix"></slot>
     <slot name="prepend" slot="prepend"></slot>
@@ -49,12 +49,23 @@ export default {
   },
   data() {
     return {
-      currentValue: this.value
+      currentValue: null
     }
   },
   watch: {
-    value(val) {
-      this.currentValue = val
+    value: {
+      handler(val) {
+        if (val !== this.currentValue) {
+          this.currentValue = val
+        }
+      },
+      immediate: true
+    },
+    currentValue(val, oldVal) {
+      this.$nextTick(() => {
+        this.currentValue = this.convert(val)
+        this.$emit('input', this.currentValue)
+      })
     }
   },
   methods: {
@@ -93,20 +104,6 @@ export default {
         }
       }
       return val
-    },
-    change(val) {
-      val = this.convert(val)
-      this.currentValue = val
-      this.$emit('input', val)
-      this.$emit('change', val)
-    },
-    blur(e) {
-      var val = this.convert(this.currentValue)
-      if (val !== '' && val !== this.currentValue) {
-        this.currentValue = val
-        this.$emit('input', val)
-      }
-      this.$emit('blur', e)
     }
   }
 }
