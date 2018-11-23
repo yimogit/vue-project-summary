@@ -1,6 +1,6 @@
 # vue-components
 
-经常会使用到组件封装
+经常会使用到组件的封装
 
 ## element-ui 强类型文本框
 
